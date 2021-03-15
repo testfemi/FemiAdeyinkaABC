@@ -1,0 +1,706 @@
+What is Xpath
+A query language which is used to find a node or set of nodes in xml/html document
+HTML DOM - document object model
+
+Relative XPATH using node Attributes
+
+Sytax:  //TageName eg button, h1 [@]
+
+//tagName[@]
+
+notes:10
+
+//*[@id="email"]
+
+//*[@id="u_0_b"]
+
+Create for a dynamic ids
+https://www.facebook.com/
+//a[@data-testid='open-registration-form-button']
+
+//label[text()='Female'] or //label[contains(text(),'Female')]
+
+using And Operator
+
+Sysntax:  //TagName[]@attribute1='Value' and @attribute2='Value2']
+
+//TagName[]@attribute1='Value' and @type= '']
+
+Using or Operator
+
+//TagName[]@attribute1='Value' or @attribute2='Value2']
+
+//TagName[]@attribute1='Value' or text()= 'value 2']
+
+Using Contains:
+
+//TagName[contains(@attribut1, 'partial value')
+
+Assignment:
+starts - with
+
+Systax    : //Tagname[starts-with(@attribute, 'starting-value') ]
+
+5. Hybrid - combine using starts or contains
+
+====================================================
+
+What is Xpath?
+A Query Language which is used to find a node or set of nodes in XML/HTML document
+HTML DOM - Document Object Model
+
+Relative XPath Using Node Attributes
+
+Synax : //TagName[@Attribute Name = "Attribute Value"]
+
+<h1 id="hello"></h1>
+
+//*[@id="email"]
+
+//input[@aria-label='Email address or phone number']
+
+//a[@data-testid='open-registration-form-button']
+
+//label[text()='Female']
+
+//label[contains(text(),'Female')]
+
+
+1. Using 'and' Operator
+Syntax: //TagName[@Attr1='Value1' and @Attr2='Value2']
+//TagName[@Attr1='Value1' and Text()='Value2']
+
+//input[@id='userSignInFormEmail' and @type='email']
+
+2.Using 'or' Operator
+Syntax: //TagName[@Attr1='Value1' or @Attr2='Value2']
+  //TagName[@Attr1='Value1' or Text()='Value2']
+
+3. Using contains
+
+Syntax : //TagName[contains(@Attr1,'Partial Value')]
+ //TagName[contains(text(),'Partial Value')]
+
+4. Using starts-with
+
+ Syntax : //TagName[starts-with(@Att,'Starting-Value')]
+//TagName[starts-with(text(),'Starting-Value')]
+
+5. Hybrid //TagName[contains(@Attr1,'Pa
+
+
+13:00
+
+MaanavaN Learn Code to Everyone
+
+4. Using starts-with
+
+ Syntax : //TagName[starts-with(@Att,'Starting-Value')]
+//TagName[starts-with(text(),'Starting-Value')]
+
+5. Hybrid //TagName[contains(@Attr1,'Partial Value')] and TagName[starts-with(text(),'Starting-Value')]
+//TagName[contains(@Attr1,'Partial Value')] or  TagName[start
+
+========================
+handling Model, Use time wait
+
+=========================
+Xpath child parent usage
+
+//div[@id='u_0_3']/child::*  ---  to select all child
+
+//div[@id='u_0_3']/child::span - for specific child
+
+//div[@id='u_0_3']/parent::*  ---  to select all child
+
+//div[@id='u_0_3']/parent::span - for specific child
+
+//div[@id='u_0_3']/child::div[3]  ---  to select all child
+
+
+Xpath using Acestor and Decendent Relationship:
+
+//div[@id='pageFooter']/ancestor::*
+
+//div[@id='u_0_3']/descendant::*
+
+//div[@id='u_0_3']/descendant::div[5]
+
+Assignment:
+How to find preceding and sibling
+
+CSS Selectors
+
+cascading style sheet:
+#pageFooter > ul > li:nth-child(2) > a
+This might be to test the colour or fronts, because they have unquiqe patern:
+
+ID can be represented by #
+
+ID = # (hash)
+
+class = . (dot)
+
+================
+
+amzone website
+
+find b y cssselector(
+i.hm-icon
+
+htmltag#
+
+htmltag.classname or .classname,
+
+parent>childtag
+
+another way to write css
+
+div[id='reg_error']  == css === one attribute
+//div[@id='reg_error']=== Xpath
+
+div[id='reg_error']
+div[id='reg_error'][role='alert'] == two attributes
+
+To use contains:
+div[role*=alert]
+
+5. dynamic Id
+
+id =
+
+Test_123
+Test_345
+Test_456
+
+input[id*=Test_]
+
+6. Start with text in css
+
+input[id^='name']
+
+7. ending text in css
+
+input[id$='name']
+
+8.comma in css:
+div.private-input,input#username
+
+span._5k_4, select#day
+
+9. first of type in css
+
+To get decendatent in CSS
+.jobsum.jobSelected>p === p is all the decendant of jobsum
+.jobsum.jobSelected>p:first-of-type
+
+10 last-of-type
+
+.jobsum.jobSelected>p:last-of-type
+
+11. nth-of-type -- to select specific  number
+.jobsum.jobSelected>p:nth-of-type(2)
+
+to find all the element -
+
+.jobsum.jobSelected>p:nth-of-type(n)
+
+This will find all the element, then we can use the forloop to get the specific information
+
+12. Sibling of element:  -- + is use for sibling
+div.private-form+div.private
+
+ul#categirues>li:nth-of-type(3)+li
+
+13. not operator in CSS
+div.private-form:not(div.private
+
+==================================================
+1. id--> htmltag#id , #id
+2. class --> htmltag.classname, .classname, .c1.c2.c3, htmltag.c1.c2.c3...cn
+3. parent>childtag
+
+ul#categories
+#username
+input#username
+input.form-control.private-form__control.login-email
+input#username.form-control.private-form__control.login-email
+input.login-email
+.form-control.private-form__control.login-email
+
+4. htmltag[id='value']
+//div[@id='test']
+
+input[id='username'] -- css with one attribute
+//input[@id='username'] --xpath
+
+input[id='username'][type='email'] -- css with two attributes
+//input[@id='username' and @type='email'] -- xpath
+
+5. contains the text in css:
+input[id*='user']
+input[id*='name']
+
+id =
+test_123
+test_345
+test_456
+input[id*=test_]
+
+6. starting the text in css:
+input[id^='user']
+
+7. ending the text in css:
+input[id$='name']
+
+8. comma in css:
+div.private-form__input-wrapper, input#username
+
+9. first-of-type in css:
+ul#categories>li:first-of-type
+
+10. last-of-type in css:
+ul#categories>li:last-of-type
+
+11. nth-of-type
+ul#categories>li:nth-of-type(1)
+ul#categories>li:nth-of-type(14)
+ul#categories>li:nth-of-type(3)
+ul#categories>li:nth-of-type(n) -- all
+
+12. sibling of element:
+div.private-form__input-wrapper + div
+div.private-form__input-wrapper+div.private-form__meta
+ul#categories>li:nth-of-type(3)+li
+
+13. not operator in css:
+input.form-control.private-form__control:not(.login-password)
+
+/html[1]/body[1]/div[1]/div[3]/app[1]/can-home[1]/div[1]/can-layout-a[1]/section[1]/app-search-panel-tabbed[1]/app-search[1]
+/app-dynamic-form[1]/div[1]/form[1]/div[11]/button[1]
+
+
+=========================
+Java collections concepts
+
+How to iterate link realesed
+Using forloop:
+beginnersbook.com/java
+
+Assignment: Wallmart ---
+searchh -  mens shoe
+Pick shows title:::
+
+
+============================================================
+Day 11
+How to handle CSV data
+
+Add the PON XML dependacy
+Create new darectory and add the data
+
+How to handle data Driven:
+
+Data Driven Approach in XML
+
+
+
+=================
+Page object models
+To avoid duplicate codes
+
+
+==================
+DevOps is kind of a mind set - It involved
+
+1. Collaboration :
+
+Build automation without manual interaction:
+
+
+Deopps Pipeline
+
+CI / CD
+Continious Integration:
+integrating all eviroment:
+
+
+Continious Delivery:
+
+
+
+Continious monitoring.
+
+Used selenium based on Java delovment#Used Mavev to build code.
+
+
+Git - Is a source code management:
+
+Git and GitHub::::
+
+This is use to manage source code...
+Keep codes in the git for management process...
+
+Git and Github both are different:
+
+Git = is a distributed version control system
+You have to download:
+
+
+Github - is a resibory = Webapplication
+Internet is required when we want to upload online...
+
+
+Use Obuntu
+
+
+==================================
+
+test ng:
+https://www.guru99.com/all-about-testng-and-selenium.html
+
+
+https://www.automationtestinginsider.com/p/selenium-vi.html
+
+==============================================================
+What is Xpath
+A query language which is used to find a node or set of nodes in xml/html document
+HTML DOM - document object model
+
+Relative XPATH using node Attributes
+
+Sytax:  //TageName eg button, h1 [@]
+
+//tagName[@]
+
+notes:10
+
+//*[@id="email"]
+
+//*[@id="u_0_b"]
+
+Create for a dynamic ids
+https://www.facebook.com/
+//a[@data-testid='open-registration-form-button']
+
+//label[text()='Female'] or //label[contains(text(),'Female')]
+
+using And Operator
+
+Sysntax:  //TagName[]@attribute1='Value' and @attribute2='Value2']
+
+//TagName[]@attribute1='Value' and @type= '']
+
+Using or Operator
+
+//TagName[]@attribute1='Value' or @attribute2='Value2']
+
+//TagName[]@attribute1='Value' or text()= 'value 2']
+
+Using Contains:
+
+//TagName[contains(@attribut1, 'partial value')
+
+Assignment:
+starts - with
+
+Systax    : //Tagname[starts-with(@attribute, 'starting-value') ]
+
+5. Hybrid - combine using starts or contains
+
+====================================================
+
+What is Xpath?
+A Query Language which is used to find a node or set of nodes in XML/HTML document
+HTML DOM - Document Object Model
+
+Relative XPath Using Node Attributes
+
+Synax : //TagName[@Attribute Name = "Attribute Value"]
+
+<h1 id="hello"></h1>
+
+//*[@id="email"]
+
+//input[@aria-label='Email address or phone number']
+
+//a[@data-testid='open-registration-form-button']
+
+//label[text()='Female']
+
+//label[contains(text(),'Female')]
+
+
+1. Using 'and' Operator
+Syntax: //TagName[@Attr1='Value1' and @Attr2='Value2']
+//TagName[@Attr1='Value1' and Text()='Value2']
+
+//input[@id='userSignInFormEmail' and @type='email']
+
+2.Using 'or' Operator
+Syntax: //TagName[@Attr1='Value1' or @Attr2='Value2']
+  //TagName[@Attr1='Value1' or Text()='Value2']
+
+3. Using contains
+
+Syntax : //TagName[contains(@Attr1,'Partial Value')]
+ //TagName[contains(text(),'Partial Value')]
+
+4. Using starts-with
+
+ Syntax : //TagName[starts-with(@Att,'Starting-Value')]
+//TagName[starts-with(text(),'Starting-Value')]
+
+5. Hybrid //TagName[contains(@Attr1,'Pa
+
+
+13:00
+
+MaanavaN Learn Code to Everyone
+
+4. Using starts-with
+
+ Syntax : //TagName[starts-with(@Att,'Starting-Value')]
+//TagName[starts-with(text(),'Starting-Value')]
+
+5. Hybrid //TagName[contains(@Attr1,'Partial Value')] and TagName[starts-with(text(),'Starting-Value')]
+//TagName[contains(@Attr1,'Partial Value')] or  TagName[start
+
+========================
+handling Model, Use time wait
+
+=========================
+Xpath child parent usage
+
+//div[@id='u_0_3']/child::*  ---  to select all child
+
+//div[@id='u_0_3']/child::span - for specific child
+
+//div[@id='u_0_3']/parent::*  ---  to select all child
+
+//div[@id='u_0_3']/parent::span - for specific child
+
+//div[@id='u_0_3']/child::div[3]  ---  to select all child
+
+
+Xpath using Acestor and Decendent Relationship:
+
+//div[@id='pageFooter']/ancestor::*
+
+//div[@id='u_0_3']/descendant::*
+
+//div[@id='u_0_3']/descendant::div[5]
+
+Assignment:
+How to find preceding and sibling
+
+CSS Selectors
+
+cascading style sheet:
+#pageFooter > ul > li:nth-child(2) > a
+This might be to test the colour or fronts, because they have unquiqe patern:
+
+ID can be represented by #
+
+ID = # (hash)
+
+class = . (dot)
+
+================
+
+amzone website
+
+find b y cssselector(
+i.hm-icon
+
+htmltag#
+
+htmltag.classname or .classname,
+
+parent>childtag
+
+another way to write css
+
+div[id='reg_error']  == css === one attribute
+//div[@id='reg_error']=== Xpath
+
+div[id='reg_error']
+div[id='reg_error'][role='alert'] == two attributes
+
+To use contains:
+div[role*=alert]
+
+5. dynamic Id
+
+id =
+
+Test_123
+Test_345
+Test_456
+
+input[id*=Test_]
+
+6. Start with text in css
+
+input[id^='name']
+
+7. ending text in css
+
+input[id$='name']
+
+8.comma in css:
+div.private-input,input#username
+
+span._5k_4, select#day
+
+9. first of type in css
+
+To get decendatent in CSS
+.jobsum.jobSelected>p === p is all the decendant of jobsum
+.jobsum.jobSelected>p:first-of-type
+
+10 last-of-type
+
+.jobsum.jobSelected>p:last-of-type
+
+11. nth-of-type -- to select specific  number
+.jobsum.jobSelected>p:nth-of-type(2)
+
+to find all the element -
+
+.jobsum.jobSelected>p:nth-of-type(n)
+
+This will find all the element, then we can use the forloop to get the specific information
+
+12. Sibling of element:  -- + is use for sibling
+div.private-form+div.private
+
+ul#categirues>li:nth-of-type(3)+li
+
+13. not operator in CSS
+div.private-form:not(div.private
+
+==================================================
+1. id--> htmltag#id , #id
+2. class --> htmltag.classname, .classname, .c1.c2.c3, htmltag.c1.c2.c3...cn
+3. parent>childtag
+
+ul#categories
+#username
+input#username
+input.form-control.private-form__control.login-email
+input#username.form-control.private-form__control.login-email
+input.login-email
+.form-control.private-form__control.login-email
+
+4. htmltag[id='value']
+//div[@id='test']
+
+input[id='username'] -- css with one attribute
+//input[@id='username'] --xpath
+
+input[id='username'][type='email'] -- css with two attributes
+//input[@id='username' and @type='email'] -- xpath
+
+5. contains the text in css:
+input[id*='user']
+input[id*='name']
+
+id =
+test_123
+test_345
+test_456
+input[id*=test_]
+
+span[class='t-Button-label']
+
+6. starting the text in css:
+input[id^='user']
+
+7. ending the text in css:
+input[id$='name']
+
+8. comma in css:
+div.private-form__input-wrapper, input#username
+
+9. first-of-type in css:
+ul#categories>li:first-of-type
+
+10. last-of-type in css:
+ul#categories>li:last-of-type
+
+11. nth-of-type
+ul#categories>li:nth-of-type(1)
+ul#categories>li:nth-of-type(14)
+ul#categories>li:nth-of-type(3)
+ul#categories>li:nth-of-type(n) -- all
+
+12. sibling of element:
+div.private-form__input-wrapper + div
+div.private-form__input-wrapper+div.private-form__meta
+ul#categories>li:nth-of-type(3)+li
+
+13. not operator in css:
+input.form-control.private-form__control:not(.login-password)
+
+/html[1]/body[1]/div[1]/div[3]/app[1]/can-home[1]/div[1]/can-layout-a[1]/section[1]/app-search-panel-tabbed[1]/app-search[1]
+/app-dynamic-form[1]/div[1]/form[1]/div[11]/button[1]
+
+
+=========================
+Java collections concepts
+
+How to iterate link realesed
+Using forloop:
+beginnersbook.com/java
+
+Assignment: Wallmart ---
+searchh -  mens shoe
+Pick shows title:::
+
+
+============================================================
+Day 11
+How to handle CSV data
+
+Add the PON XML dependacy
+Create new darectory and add the data
+
+How to handle data Driven:
+
+Data Driven Approach in XML
+
+
+
+=================
+Page object models
+To avoid duplicate codes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
